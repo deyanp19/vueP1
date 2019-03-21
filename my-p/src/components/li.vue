@@ -4,6 +4,9 @@
   <ul id="app">
     <li v-for="todo in todos">
       {{ todo }}
+       <button @click="$emit('remove', todo.id)">
+      X
+    </button>
     </li>
   </ul>
  
@@ -11,6 +14,8 @@
 </template>
 
 <script>
+ 
+
 
 export default {
   name: 'custom-li',
@@ -28,19 +33,32 @@ h3 {
 }
  ul{
    position: right;
-   border: 1px solid black;
+   
  }
 li {
+  font-weight: 700;
   list-style-position: inside;
   list-style-type: circle;
-  margin: 0 10px;
+  margin: 7px;
   text-align: left;
-  border: 1px solid black;
+  background-color: #A9DFBF;
+  border-radius: 16px;
+  padding: 5px;
+  color: white;
+  text-shadow: 1px 1px 6px black  ;
+  box-shadow: 5px 5px 3px grey;
 
 }
-.delete {
-   text-align: right;
+li:hover {
+  background-color:#7DCEA0;
+}
+
+button {
+  border-radius: 50%;
+  text-align: right;
   margin-right: 20px;
+  box-shadow: 0px 0px 7px grey;
+  position: relative;
 }
  
 </style>

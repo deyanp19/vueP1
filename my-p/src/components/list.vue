@@ -1,16 +1,16 @@
 <template>
   <div class="list">
-    <h1>{{ msg }}</h1>
+    <h1>Products to prepare tarator</h1>
     
      
-     <input placeholder="Enter New Product" style="text">
-     <button @click="addItem">Add Item</button>
+     <input type="text"
+    class="input"
+    :value="value"
+    v-on="listeners" id="input" placeholder="Enter New Product" style="text">
+     <button id="btn" @click="addItem">Add Item</button>
 
      
-    <ul>
-      <li> yogurt <button class="delete">x</button></li>
-    
-    </ul>
+   
   </div>
 </template>
 
@@ -18,7 +18,20 @@
 export default {
   name: 'list',
   props: {
-    msg: String
+    value: {
+      type: String,
+      default: '',
+    }
+   },
+  computed: {
+    listeners () {
+      return {
+        // Pass all component listeners directly to input
+        ...this.$listeners,
+        // Override input listener to work with v-model
+        input: event => this.$emit('input', event.target.value)
+      }
+    }
   }
 }
 </script>
@@ -33,18 +46,26 @@ h3 {
    
  }
 li {
+  font-weight: 700;
   list-style-position: inside;
   list-style-type: circle;
-  margin: 0 10px;
+  margin: 7px;
   text-align: left;
-  background-color: red;
-  border-radius: 6px;
-
-
+  background-color: #A9DFBF;
+  border-radius: 16px;
+  padding: 5px;
+  color: white;
+  text-shadow: 1px 1px 6px black  ;
+  box-shadow: 5px 5px 3px grey;
 }
 .delete {
-   text-align: right;
+  border-radius: 50%;
+  text-align: right;
   margin-right: 20px;
+  box-shadow: 0px 0px 7px grey;
 }
- 
+
+#input, #btn {
+  border-radius: 16px;
+}
 </style>

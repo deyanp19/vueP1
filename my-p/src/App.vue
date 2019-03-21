@@ -8,12 +8,15 @@
 <script>
 import list from './components/list.vue'
 import customLi from './components/li.vue'
-
+ 
+ 
+ 
 export default {
   name: 'app',
   components: {
     list: list,
     customLi:customLi
+   
    },
    data() {
      return {
