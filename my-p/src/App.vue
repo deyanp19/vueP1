@@ -20,7 +20,7 @@ export default {
    },
    data() {
      return {
-       todos: ['yogurt','cucumber','dill']
+       todos: ['yogurt','cucumber','dill','salt']
      }  
   }
 }
