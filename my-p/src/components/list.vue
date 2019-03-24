@@ -1,16 +1,11 @@
 <template>
   <div class="list">
     <h1>Products to prepare tarator</h1>
-    
-     
-     <input type="text"
+    <input type="text"
     class="input"
     :value="value"
     v-on="listeners" id="input" placeholder="Enter New Product" style="text">
      <button id="btn" @click="addItem">Add Item</button>
-
-     
-   
   </div>
 </template>
 
@@ -23,6 +18,12 @@ export default {
       default: '',
     }
    },
+   components: {
+    list
+  
+   
+   },
+  
   computed: {
     listeners () {
       return {

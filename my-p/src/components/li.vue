@@ -1,6 +1,6 @@
 <template>
   <div class="li">
-   
+   <custom-li :todos="todos" />
   <ul id="app">
     <li v-for="todo in todos">
       {{ todo }}
@@ -21,6 +21,11 @@ export default {
   name: 'custom-li',
   props: {
     todos: String
+  },
+   data() {
+     return {
+       todos: ['yogurt','cucumber','dill','salt']
+     }  
   }
 }
 </script>

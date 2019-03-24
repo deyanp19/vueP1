@@ -1,28 +1,25 @@
 <template>
   <div id="app">
-    <list msg="Products to prepare tarator"/>
-    <custom-li :todos="todos" />
+  <h1>Products to prepare tarator</h1>
+  <router-link  to="/" class="nav">Home</router-link>
+
+  <router-link to="recepie" class="nav">List-check</router-link>
+  <recepie recepie="recepie" />
+
+  <router-view></router-view>
+   
+    
   </div>
 </template>
 
 <script>
-import list from './components/list.vue'
-import customLi from './components/li.vue'
  
+ import recepie from './components/secondPage.vue'
  
  
 export default {
   name: 'app',
-  components: {
-    list: list,
-    customLi:customLi
-   
-   },
-   data() {
-     return {
-       todos: ['yogurt','cucumber','dill','salt']
-     }  
-  }
+  
 }
 </script>
 
@@ -39,5 +36,10 @@ export default {
 li {
   background-color: red;
   border-radius: 6px;
+}
+.nav {
+  font-weight: 800;
+  margin-left:10px;
+  color: green;
 }
 </style>
