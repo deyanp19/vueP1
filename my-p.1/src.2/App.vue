@@ -1,22 +1,25 @@
 <template>
   <div id="app">
-  <h1>Products to prepare dishes</h1>
-
- <router-link  to="/" class="nav">Products</router-link>
- <router-link to="/recipe" class="nav">Dishes</router-link>
- 
-
- <router-view></router-view>
-  
-    
+    <list msg="Products to prepare tarator"/>
+    <custom-li :todos="todos" />
   </div>
 </template>
 
 <script>
+import list from './components/list.vue'
+import customLi from './components/li.vue'
 
 export default {
-  name: 'app'
-  
+  name: 'app',
+  components: {
+    list: list,
+    customLi:customLi
+   },
+   data() {
+     return {
+       todos: ['yogurt','cucumber','dill']
+     }  
+  }
 }
 </script>
 
@@ -33,10 +36,5 @@ export default {
 li {
   background-color: red;
   border-radius: 6px;
-}
-.nav {
-  font-weight: 800;
-  margin-left:10px;
-  color: green;
 }
 </style>
