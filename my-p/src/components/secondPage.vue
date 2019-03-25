@@ -1,5 +1,5 @@
 <template>
-<div class="recepie">
+<div class='recepie'>
 recepie ddddd
 </div>
 
@@ -10,7 +10,7 @@ recepie ddddd
 <script>
 
 export default {
-    component: 'recepie'
+    name: 'recepie'
 }
 </script>
 

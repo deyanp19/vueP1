@@ -1,43 +1,50 @@
 <template>
   <div class="list">
-    <h1>Products to prepare tarator</h1>
-    <input type="text"
-    class="input"
-    :value="value"
-    v-on="listeners" id="input" placeholder="Enter New Product" style="text">
-     <button id="btn" @click="addItem">Add Item</button>
-  </div>
+   
+        <input type="text"
+      v-model="message" id="input" placeholder="Enter New Product" style="text" />
+        <button id="btn" @click="addItem">Add Item</button>
+
+      <div v-for="item in items">
+          <span >
+            <span>{{ item.doTask }} </span>
+          
+          </span>
+      <button @click="delItem($index)">delete</button> 
+      </div>  
+      </div>
 </template>
 
 <script>
 export default {
   name: 'list',
-  props: {
-    value: {
-      type: String,
-      default: '',
+  	data() {
+      return{
+		message: '',
+		items: [{
+			doTask: ""
+		}]
     }
-   },
-   components: {
-    list
-  
-   
-   },
-  
-  computed: {
-    listeners () {
-      return {
-        // Pass all component listeners directly to input
-        ...this.$listeners,
-        // Override input listener to work with v-model
-        input: event => this.$emit('input', event.target.value)
-      }
-    }
-  }
-}
+	},
+	methods: {
+		addItem: function (value) {
+			this.items.push({
+				doTask: this.message
+			});
+			this.message = '';
+			document.getElementById("input").focus();
+		},
+		delItem: function (index) {
+			var button = this.items[index]; 
+			this.items.$remove(button, 1); 
+			document.getElementById("input").focus();
+		}
+	}
+} 
+
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+ 
 <style scoped>
 h3 {
   margin: 40px 0 0;

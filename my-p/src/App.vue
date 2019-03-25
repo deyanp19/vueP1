@@ -3,19 +3,18 @@
   <h1>Products to prepare tarator</h1>
   <router-link  to="/" class="nav">Home</router-link>
 
-  <router-link to="recepie" class="nav">List-check</router-link>
+  <router-link to="/recepie" class="nav">List-check</router-link>
   <recepie recepie="recepie" />
 
   <router-view></router-view>
-   
+   <list oo />
     
   </div>
 </template>
 
 <script>
  
- import recepie from './components/secondPage.vue'
- 
+ import list from './components/list.vue'
  
 export default {
   name: 'app',
