@@ -16,8 +16,11 @@
 </template>
 
 <script>
+let itemsArray=[];
+ const o = localStorage.setItem('items', JSON.stringify(itemsArray));
 export default {
   
+
     name: 'list',
  
   	data() {
@@ -29,19 +32,28 @@ export default {
     }
 	},
 	methods: {
+    
 		addItem: function (value) {
 			this.items.push({
 				doTask: this.message
 			});
 			this.message = '';
+      localStorage.setItem('rocki',JSON.stringify)
+       
+   
 			document.getElementById("input").focus();
 		},
 		delItem: function (index) {
 			var button = this.items[index]; 
-      // remember $remove is out of Vue 2.0 versions and up
+      // use splice -- remember $remove is out of Vue 2.0 versions  
 			this.items.splice(index, 1); 
+      
 			document.getElementById("input").focus();
+      
+ 
 		}
+     
+
 	}
 } 
 
@@ -68,6 +80,7 @@ li {
   color: white;
   text-shadow: 1px 1px 6px black  ;
   box-shadow: 5px 5px 3px grey;
+  text-decoration: none;
 }
 .delete {
   border-radius: 50%;
