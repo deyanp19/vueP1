@@ -38,6 +38,7 @@ export default {
 		},
 		delItem: function (index) {
 			var button = this.items[index]; 
+      // remember $remove is out of Vue 2.0 versions and up
 			this.items.splice(index, 1); 
 			document.getElementById("input").focus();
 		}
