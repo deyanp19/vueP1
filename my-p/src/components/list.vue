@@ -1,7 +1,7 @@
 <template>
   <div class="list">
-   ssss
-     <!--   <input type="text"
+   
+      <input type="text"
       v-model="message" id="input" placeholder="Enter New Product" style="text" />
         <button id="btn" @click="addItem">Add Item</button>
 
@@ -10,36 +10,38 @@
             <span>{{ item.doTask }} </span>
           
           </span>
-      <button @click="delItem($index)">delete</button> +
-      </div>  -->
+      <button @click="delItem($index)">delete</button>
+      </div>  
       </div>
 </template>
 
 <script>
 export default {
-  name: 'list'
-  // 	data() {
-  //     return{
-	// 	message: '',
-	// 	items: [{
-	// 		doTask: ""
-	// 	}]
-  //   }
-	// },
-	// methods: {
-	// 	addItem: function (value) {
-	// 		this.items.push({
-	// 			doTask: this.message
-	// 		});
-	// 		this.message = '';
-	// 		document.getElementById("input").focus();
-	// 	},
-	// 	delItem: function (index) {
-	// 		var button = this.items[index]; 
-	// 		this.items.$remove(button, 1); 
-	// 		document.getElementById("input").focus();
-	// 	}
-	// }
+  
+    name: 'list',
+ 
+  	data() {
+      return{
+		message: '',
+		items: [{
+			doTask: ""
+		}]
+    }
+	},
+	methods: {
+		addItem: function (value) {
+			this.items.push({
+				doTask: this.message
+			});
+			this.message = '';
+			document.getElementById("input").focus();
+		},
+		delItem: function (index) {
+			var button = this.items[index]; 
+			this.items.splice(index, 1); 
+			document.getElementById("input").focus();
+		}
+	}
 } 
 
 </script>
