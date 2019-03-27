@@ -1,14 +1,11 @@
 <template>
   <div class="list">
-   
       <input type="text"
       v-model="message" id="input" placeholder="Enter New Product" style="text" />
         <button id="btn" @click="addItem">Add Item</button>
-
       <div v-for="item in items">
           <span >
             <span>{{ item.doTask }} </span>
-          
           </span>
       <button @click="delItem($index)">delete</button>
       </div>  
@@ -16,12 +13,10 @@
 </template>
 
 <script>
-let itemsArray=[];
- const o = localStorage.setItem('items', JSON.stringify(itemsArray));
+import Vuex from 'vuex'
+import { mapActions } from 'vuex'
 export default {
-  
-
-    name: 'list',
+   name: 'list',
  
   	data() {
       return{
@@ -38,9 +33,6 @@ export default {
 				doTask: this.message
 			});
 			this.message = '';
-      localStorage.setItem('rocki',JSON.stringify)
-       
-   
 			document.getElementById("input").focus();
 		},
 		delItem: function (index) {
@@ -49,11 +41,8 @@ export default {
 			this.items.splice(index, 1); 
       
 			document.getElementById("input").focus();
-      
- 
-		}
-     
-
+		} ,
+    // mapActions(['getItems'])
 	}
 } 
 

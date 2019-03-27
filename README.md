@@ -9,6 +9,7 @@ Make demo vue project that shows:
 
 *3.* Please commit the project into git.
 
+![Screenshot of the current app](https://github.com/deyanp19/vueP1/tree/master/images/front_page.png)(https://github.com/deyanp19/vueP1/tree/master/images/second_page.png)
 
 #### Technologies required:
 * Bootstrap 

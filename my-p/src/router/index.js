@@ -2,6 +2,7 @@
 import VueRouter from 'vue-router'
 import list from '../components/list.vue'
 import recipe from '../components/secondPage.vue'
+ 
 
 
  
@@ -14,6 +15,7 @@ const router = new VueRouter({
   routes: [
     { path: '/', component: list },
     { path: '/recipe', component: recipe }
+    
   ]
 })
 

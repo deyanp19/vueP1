@@ -5,7 +5,6 @@
  <router-link  to="/" class="nav">Products</router-link>
  <router-link to="/recipe" class="nav">Dishes</router-link>
  
-
  <router-view></router-view>
   
     
