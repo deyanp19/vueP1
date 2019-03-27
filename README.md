@@ -8,8 +8,7 @@ Make demo vue project that shows:
 *2.* Page B contains List B, where each item contains properties that user can choose from listA (like receipt)
 
 *3.* Please commit the project into git.
-![alt text][logo]
-[logo]: https://github.com/deyanp19/vueP1/tree/master/images/front_page.png
+: [ https://github.com/deyanp19/vueP1/tree/master/images/]front_page.png
 ![alt text]: https://github.com/deyanp19/vueP1/tree/master/images/second_page.png
 
 #### Technologies required:
