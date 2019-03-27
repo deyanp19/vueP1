@@ -9,7 +9,7 @@ Make demo vue project that shows:
 
 *3.* Please commit the project into git.
 
-![alt text](https://github.com/deyanp19/vueP1/tree/master/images/front_page.png)
+![alt text]:https://github.com/deyanp19/vueP1/tree/master/images/front_page.png
 ![alt text]: https://github.com/deyanp19/vueP1/tree/master/images/second_page.png
 
 #### Technologies required:
