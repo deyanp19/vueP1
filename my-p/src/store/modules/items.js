@@ -6,26 +6,21 @@ const state = {
 
 const getters = {
     // return all the items from the array
-    allItems: state => state.items
+    getItems: state => state.items
 };
 
-const actions = {
-    //rootState gets all the data in vuex state;  
-    getItems: function({rootState}){
-       this.items;
-       
-
-    }
-}
-
-const mutations = {
+var mutations = {
     //
-    setItems: (state, items) => {
+    setItems(state)  {
         // 
-        state.items = items;
+        state.items.push(item);
     } 
 }
-
+const actions = {
+    //rootState gets all the data in vuex state;  
+    addItem:  ({state, commit}) => commit('setItems')
+    }
+ 
 export default {
     state, 
     getters, 

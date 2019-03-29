@@ -1,49 +1,57 @@
 <template>
   <div class="list">
-      <input type="text"
-      v-model="message" id="input" placeholder="Enter New Product" style="text" />
-        <button id="btn" @click="addItem">Add Item</button>
-      <div v-for="item in items">
+    <input type="text" 
+      v-model="message" id="input" placeholder="Enter New Product" style="text"  @keyup.enter="addItem"/>
+        <button class="btn" @click="addItem ">Add Item</button> 
+        <hr />
+      <div :key="item.id"  v-for="item in items" class="listOfItems"  >
+      
           <span >
-            <span>{{ item.doTask }} </span>
+           
+            <!-- <span v-if="item.doTask == 2">{{ item.doTask }} </span> -->
+            <span>{{ item }} </span>
+ 
           </span>
-      <button @click="delItem($index)">delete</button>
+        
+      <!-- <button  v-if="(item.doTask='')" ></button> -->
+      <button  class="btn" @click="delItem($index)">delete</button> 
+       <hr />
       </div>  
       </div>
 </template>
 
 <script>
-import Vuex from 'vuex'
+ 
 import { mapActions } from 'vuex'
 export default {
    name: 'list',
- 
-  	data() {
+   data() {
       return{
 		message: '',
-		items: [{
-			doTask: ""
-		}]
+		items: []
     }
 	},
 	methods: {
-    
-		addItem: function (value) {
-			this.items.push({
-				doTask: this.message
-			});
+     
+		addItem: function () {
+			this.items.push(  this.message
+			);
 			this.message = '';
 			document.getElementById("input").focus();
 		},
+    // addItems: function() {
+    //   return this.addItem();
+    // },
 		delItem: function (index) {
-			var button = this.items[index]; 
+			//var button = this.items[index]; 
       // use splice -- remember $remove is out of Vue 2.0 versions  
 			this.items.splice(index, 1); 
-      
 			document.getElementById("input").focus();
-		} ,
-    // mapActions(['getItems'])
-	}
+    }
+	},
+  computed: {
+    ...mapActions(['addItems'])
+  }
 } 
 
 </script>
@@ -61,7 +69,7 @@ li {
   font-weight: 700;
   list-style-position: inside;
   list-style-type: circle;
-  margin: 7px;
+  /* margin: 7px; */
   text-align: left;
   background-color: #A9DFBF;
   border-radius: 16px;
@@ -78,7 +86,21 @@ li {
   box-shadow: 0px 0px 7px grey;
 }
 
-#input, #btn {
+#input, .btn {
   border-radius: 16px;
+  margin-left: 15px;
 }
+.listOfItems {
+  
+}
+hr { 
+  display: block;
+   
+   
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+  width: 60%;
+} 
 </style>
