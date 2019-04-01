@@ -1,10 +1,11 @@
 <template>
   <div id="app">
   <h1>Products to prepare dishes</h1>
+  
 
  <router-link  to="/" class="nav">Products</router-link>
  <router-link to="/recipe" class="nav">Dishes</router-link>
- 
+  <router-link to="/store" class="nav">Store</router-link>
  <router-view></router-view>
   
     
@@ -13,8 +14,11 @@
 
 <script>
 
+// import storedItems from './components/insidecom.vue'
+
+
 export default {
-  name: 'app'
+  name: 'App'
   
 }
 </script>

@@ -1,25 +1,29 @@
 // import items from '../components/list'
 
 const state = {
-    items:[]
-};
-
+    // items:[2,3,3]
+    items:3,
+    flavor:'e2'
+}
 const getters = {
-    // return all the items from the array
-    getItems: state => state.items
-};
+    getItems: state => 
+        state.items,
+    
+    flavor: state => state.flavor
+}
 
-var mutations = {
-    //
-    setItems(state)  {
-        // 
-        state.items.push(item);
-    } 
+const mutations = {
+    addItems: state =>  {
+        state.items.push(addItems);
+    } ,
+    change: (state, flavor) =>
+        state.flavor = flavor
+      
 }
 const actions = {
-    //rootState gets all the data in vuex state;  
-    addItem:  ({state, commit}) => commit('setItems')
-    }
+   addItems:  ({ commit }) => commit('addItems')
+}
+    
  
 export default {
     state, 
@@ -27,3 +31,4 @@ export default {
     actions, 
     mutations
 }
+ 

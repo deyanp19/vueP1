@@ -14,7 +14,7 @@
           </span>
         
       <!-- <button  v-if="(item.doTask='')" ></button> -->
-      <button  class="btn" @click="delItem($index)">delete</button> 
+      <button  class="btn" @input="changed" @click="delItem($index)">delete</button> 
        <hr />
       </div>  
       </div>
@@ -22,7 +22,7 @@
 
 <script>
  
-import { mapActions } from 'vuex'
+// import { mapActions } from 'vuex'
 export default {
    name: 'list',
    data() {
@@ -32,7 +32,7 @@ export default {
     }
 	},
 	methods: {
-     
+    // ...mapActions(['addItems']),
 		addItem: function () {
 			this.items.push(  this.message
 			);
@@ -47,11 +47,14 @@ export default {
       // use splice -- remember $remove is out of Vue 2.0 versions  
 			this.items.splice(index, 1); 
 			document.getElementById("input").focus();
+    },
+    
+    changed: function(event) {
+        this.$store.commit('change', event.target.value)
     }
-	},
-  computed: {
-    ...mapActions(['addItems'])
-  }
+  
+	}
+ 
 } 
 
 </script>
