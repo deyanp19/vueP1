@@ -1,20 +1,21 @@
 <template>
   <div class="list">
-    <input type="text" 
-      v-model="message" id="input" placeholder="Enter New Product" style="text"  @keyup.enter="addItem"/>
-        <button class="btn" @click="addItem ">Add Item</button> 
+    <!-- This is the lable and input from the example -->
+   
+   
+    <!--End of example -->
+
+  <input type="text" name="flavor" v-model="message" id="input" placeholder="Enter New Product" style="text"  @keyup.enter="changed"/>
+  <button  class="btn" @click="changed">Add Item</button> 
         <hr />
-      <div :key="item.id"  v-for="item in items" class="listOfItems"  >
-      
+
+      <div :key="item.id"  v-for="(item, index) in $store.getters.flavor" class="listOfItems"  >
           <span >
-           
             <!-- <span v-if="item.doTask == 2">{{ item.doTask }} </span> -->
             <span>{{ item }} </span>
- 
           </span>
-        
-      <!-- <button  v-if="(item.doTask='')" ></button> -->
-      <button  class="btn" @input="changed" @click="delItem($index)">delete</button> 
+      <button  class="btn"   @click="delItem(index)">delete</button> 
+      <p id="recorded">&#9898 Recorded</p>
        <hr />
       </div>  
       </div>
@@ -33,24 +34,40 @@ export default {
 	},
 	methods: {
     // ...mapActions(['addItems']),
-		addItem: function () {
-			this.items.push(  this.message
-			);
-			this.message = '';
-			document.getElementById("input").focus();
-		},
+		// addItem: function () {
+		// 	this.items.push(this.message);
+    //   this.message = '';
+       
+			// document.getElementById("input").focus();
+		// },
     // addItems: function() {
     //   return this.addItem();
     // },
-		delItem: function (index) {
+		delItem: function(index) {
 			//var button = this.items[index]; 
       // use splice -- remember $remove is out of Vue 2.0 versions  
-			this.items.splice(index, 1); 
+			this.$store.getters.flavor.splice(index, 1); 
 			document.getElementById("input").focus();
     },
     
-    changed: function(event) {
-        this.$store.commit('change', event.target.value)
+    changed: function(event) {     
+       
+        
+        if (document.getElementById("input").value == "") {
+          alert("Name must be filled!")
+      } else {
+      
+        var msg = document.getElementById("input").value;
+        this.$store.commit('change', msg );
+        // this.items.push(msg);
+        this.message = '';
+         // this.addItem();
+        document.getElementById("input").focus();
+        }
+    },   
+
+    validateInput: function() {
+      
     }
   
 	}
@@ -106,4 +123,12 @@ hr {
   border-width: 1px;
   width: 60%;
 } 
+#recorded {
+ background-color: white;
+ color:rgb(231, 48, 48);
+ display:inline;
+ position: relative;
+ right: -100px;
+
+}
 </style>

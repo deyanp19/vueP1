@@ -1,13 +1,14 @@
 <template>
 <div id="storedIt">
 <!-- <li >{{$store.getters.getItems}} </li> -->
-<p> You choose prop:  {{storageItem}}</p>
+
 rambo
+ <p> You choose {{$store.getters.flavor}}</p>  
 </div>
 </template>
 
 <script>
-
+//import {mapGetters} from 'vuex'
 
 export default {
     name: 'storedIt',
@@ -17,11 +18,13 @@ export default {
         }
 
     },
-    computed: {
-        storageItem() {
-            return this.$store.state
-        }
-    },
+   // computed: mapGetters(['getItems'])
+    
+    // {
+    //     storageItem() {
+    //         return  $store.getters.flavor
+    //     }
+    // },
 }
 
 

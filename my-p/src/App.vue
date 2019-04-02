@@ -1,7 +1,9 @@
 <template>
   <div id="app">
   <h1>Products to prepare dishes</h1>
+
   
+        
 
  <router-link  to="/" class="nav">Products</router-link>
  <router-link to="/recipe" class="nav">Dishes</router-link>
@@ -16,9 +18,13 @@
 
 // import storedItems from './components/insidecom.vue'
 
-
 export default {
-  name: 'App'
+  name: 'App',
+      methods: {
+        changed: function(event) {
+            this.$store.commit('change', event.target.value)
+        }
+    }
   
 }
 </script>
