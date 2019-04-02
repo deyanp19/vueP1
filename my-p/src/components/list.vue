@@ -5,7 +5,8 @@
    
     <!--End of example -->
 
-  <input type="text" name="flavor" v-model="message" id="input" placeholder="Enter New Product" style="text"  @keyup.enter="changed"/>
+  <input pattern="[A-Za-z]{5}" type="text" name="flavor" v-model="message" id="input" placeholder="Enter New Product" style="text"  @keyup.enter="changed"/>
+
   <button  class="btn" @click="changed">Add Item</button> 
         <hr />
 
@@ -53,7 +54,7 @@ export default {
     changed: function(event) {     
        
         
-        if (document.getElementById("input").value == "") {
+        if (document.getElementById("input").value === "" ) {
           alert("Name must be filled!")
       } else {
       
