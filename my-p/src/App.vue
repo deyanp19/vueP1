@@ -1,13 +1,15 @@
 <template>
   <div id="app">
   <h1>Products to prepare dishes</h1>
+  
 
   
         
 
  <router-link  to="/" class="nav">Products</router-link>
  <router-link to="/recipe" class="nav">Dishes</router-link>
-  <router-link to="/store" class="nav">Store</router-link>
+ <router-link to="/create" class="nav">Create Recepie</router-link>
+ <router-link to="/view" class="nav">View your Recepies</router-link>
  <router-view></router-view>
   
     
@@ -19,12 +21,8 @@
 // import storedItems from './components/insidecom.vue'
 
 export default {
-  name: 'App',
-      methods: {
-        changed: function(event) {
-            this.$store.commit('change', event.target.value)
-        }
-    }
+  name: 'App'
+      
   
 }
 </script>
@@ -37,6 +35,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+   
   
 }
 h3 {
@@ -46,20 +45,7 @@ h3 {
    position: right;
    
  }
-li {
-  font-weight: 700;
-  list-style-position: inside;
-  list-style-type: circle;
-  margin: 7px;
-  text-align: left;
-  background-color: #A9DFBF;
-  border-radius: 16px;
-  padding: 5px;
-  color: white;
-  text-shadow: 1px 1px 6px black  ;
-  box-shadow: 5px 5px 3px grey; 
-  border-radius: 6px;
-}
+
 .delete {
   border-radius: 50%;
   text-align: right;

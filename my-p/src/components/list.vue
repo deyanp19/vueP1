@@ -86,20 +86,7 @@ h3 {
    position: right;
    
  }
-li {
-  font-weight: 700;
-  list-style-position: inside;
-  list-style-type: circle;
-  /* margin: 7px; */
-  text-align: left;
-  background-color: #A9DFBF;
-  border-radius: 16px;
-  padding: 5px;
-  color: white;
-  text-shadow: 1px 1px 6px black  ;
-  box-shadow: 5px 5px 3px grey;
-  text-decoration: none;
-}
+ 
 .delete {
   border-radius: 50%;
   text-align: right;
@@ -131,5 +118,20 @@ hr {
  position: relative;
  right: -100px;
 
+}
+
+li {
+  font-weight: 700;
+  list-style-position: inside;
+  list-style-type: circle;
+  margin: 7px;
+  text-align: left;
+  background-color: #A9DFBF;
+  border-radius: 16px;
+  padding: 5px;
+  color: white;
+  text-shadow: 1px 1px 6px black  ;
+  box-shadow: 5px 5px 3px grey; 
+  border-radius: 6px;
 }
 </style>
