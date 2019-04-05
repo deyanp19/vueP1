@@ -6,7 +6,7 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
   state: {
     flavor:["one","two"],
-    items:[{product:"Honey",weight:" 3"},{product:"Potato",weight:" 100"}]
+      items:[{product:"Honey",weight:" 3",units:"kg"},{product:"Potato",weight:" 100",units:"kg"}]
 
   },
   mutations: {

@@ -10,6 +10,7 @@ Make demo vue project that shows:
 *3.* Please commit the project into git.
 <img src="images/front_page.png" width="200">
 <img src="images/second_page.png" width="200">
+<img src="images/second_page3.png" width="200">
 
 #### Technologies required:
 * Bootstrap 
