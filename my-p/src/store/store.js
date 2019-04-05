@@ -6,20 +6,30 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
   state: {
     flavor:["one","two"],
-    recepie:["one","two"]
+    items:[{product:"Honey",weight:" 3"},{product:"Potato",weight:" 100"}]
+
   },
   mutations: {
     change(state, flavor) {
       state.flavor.push(flavor)
        },
-    changeRecepie(state, recepie) {
-    state.recepie.push(recepie)
-      }
+    changeItem(state,{product,weight}) {
+      // create  variables that need to be pushed each itteration
+     
+    state.items.push({product,weight})
+     
+      
+    }
   },
   getters: {
       flavor: state => state.flavor,
-      recepie: state => state.recepie
-      // create getter for recepie title only
+      Recipe: state => state.Recipe,
+      getItems: function(state) {
+        var productAndWeight = state.items 
+        return productAndWeight
+      }
+      
+      // create getter for Recipe title only
   }
 })
 

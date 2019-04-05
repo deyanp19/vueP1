@@ -1,6 +1,6 @@
 <template>
-<div class="view">
-view
+<div class="rview">
+ 
    <oneList />
        
 </div>
@@ -14,7 +14,7 @@ view
 import oneList from '../components/forList.vue'
 
 export default {
-  name: 'view',
+  name: 'rview',
     components: {
         oneList
     }

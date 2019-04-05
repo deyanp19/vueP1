@@ -1,63 +1,44 @@
 <template>
      <div class="create">
-         create
-         <div class="product-input">
-            <inputComp />
-            <inputComp />
-        </div>
-         
-        <div class="list-products">
-            Your recepie
-           <oneList />
+         <div class="product">
+            <placement placeholder1="Enter Product" placeholder2="Quantity" />
             
+        </div>
+        <div class="list-products">
+           Entered Products and Quantities
+           <oneList />
         </div>
     </div>
 </template>
 
 <script>
-import inputComp from '../components/input.vue'
+import placement from '../components/placement.vue'
 import oneList from '../components/forList.vue'
-
 
 export default {
     components: {
         oneList,
-        inputComp
+        placement
     },
-    methods: {
-        changeRecepie: function(event) {     
-       event.preventDefault();
-       
-        
-        if (document.getElementById("input").value === "" ) {
-          alert("Name must be filled!")
-      } else {
-      
-        var msg = document.getElementById("input").value;
-        this.$store.commit('changeRecepie', msg );
-        // this.items.push(msg);
-        this.message = '';
-         // this.addItem();
-        document.getElementById("input").focus();
+     
+    data() {
+        return {
+            // Enter if needed
+            }
         }
-    },   
     }
-
-  
-}
-
 </script>
 
 <style>
-.product-input {
+.product{
     margin: 40px 0px 0px 0px;
-    width: 40%;
-    clear: both;
+    width: 50%;
     float: left;
     background-color: rgba(219, 224, 149, 0.376);
     border-radius: 10px;
 }
 .list-products {
+    
     padding-top: 15px;
     width: 40%;
     margin: 40px 0px 0px 0px;
@@ -67,6 +48,7 @@ export default {
 }
 
 li {
+  font-size: 10px;
   font-weight: 700;
   list-style-position: inside;
   list-style-type: circle;

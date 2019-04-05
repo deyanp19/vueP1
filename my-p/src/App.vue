@@ -6,10 +6,10 @@
   
         
 
- <router-link  to="/" class="nav">Products</router-link>
- <router-link to="/recipe" class="nav">Dishes</router-link>
- <router-link to="/create" class="nav">Create Recepie</router-link>
- <router-link to="/view" class="nav">View your Recepies</router-link>
+  
+ 
+ <router-link to="/create" class="nav">Enter Products</router-link>
+ <router-link to="/view" class="nav">View Products</router-link>
  <router-view></router-view>
   
     
@@ -53,10 +53,6 @@ h3 {
   box-shadow: 0px 0px 7px grey;
 }
 
-#input, #btn {
-  border-radius: 16px;
-  margin-top: 15px;
-}
  
 .nav {
   font-weight: 800;
@@ -69,5 +65,21 @@ h3 {
 .nav:hover {
   background-color:  #A9DFBB;
   color: white;
+}
+
+li {
+  font-size: 10px;
+  font-weight: 700;
+  list-style-position: inside;
+  list-style-type: circle;
+  margin: 7px;
+  text-align: left;
+  background-color: #A9DFBF;
+  border-radius: 16px;
+  padding: 5px;
+  color: white;
+  text-shadow: 1px 1px 6px black  ;
+  box-shadow: 5px 5px 3px grey; 
+  border-radius: 6px;
 }
 </style>
