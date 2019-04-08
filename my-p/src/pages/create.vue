@@ -30,15 +30,16 @@ export default {
 </script>
 
 <style>
-.product{
-    margin: 40px 0px 0px 0px;
+ .product{
+    margin: 60px 0px 0px 0px;
+    padding: 20px;
     width: 50%;
     float: left;
     background-color: rgba(219, 224, 149, 0.376);
     border-radius: 10px;
+    
 }
 .list-products {
-    
     padding-top: 15px;
     width: 40%;
     margin: 40px 0px 0px 0px;

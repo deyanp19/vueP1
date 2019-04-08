@@ -34,7 +34,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top:60px;
    
   
 }
@@ -56,7 +56,7 @@ h3 {
  
 .nav {
   font-weight: 800;
-  margin-left:10px;
+  /* margin-left:10px; */
   color: green;
   text-decoration: none;
   padding:10px;

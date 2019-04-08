@@ -6,17 +6,17 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
   state: {
     flavor:["one","two"],
-      items:[{product:"Honey",weight:" 3",units:"kg"},{product:"Potato",weight:" 100",units:"kg"}]
+      items:[{product:"Honey",weight:" 3",units:"kg"},{product:"Cofe",weight:" 100",units:"kg"}]
 
   },
   mutations: {
     change(state, flavor) {
       state.flavor.push(flavor)
        },
-    changeItem(state,{product,weight}) {
+    changeItem(state,{product,weight,units}) {
       // create  variables that need to be pushed each itteration
      
-    state.items.push({product,weight})
+    state.items.push({product,weight,units})
      
       
     }
