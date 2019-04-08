@@ -1,8 +1,6 @@
 <template>
 <div class="inputComp">
- 
     <input  ref="my_input1" v-bind:placeholder="placeholder1" type="text" v-model="product"   style="text" />
-   
     <input  class="quantity" ref="my_input2" v-bind:placeholder="placeholder2" type="text" v-model="weight"   style="text" /> 
     <select  class="dropdown" ref="my_input3" name="units" v-model="units">
       <option>kg</option>
@@ -10,17 +8,11 @@
       <option>l</option>
       <option>ml</option>
     </select>
-      
-     
-  <button  class="btn" @click="changeItem">Add Item</button> 
-  
-   
+  <button  class="btn btnAdd" @click="changeItem">Add Item</button> 
 </div>
 </template>
-
-
 <script>
-  // //
+
 export default {
         name:'placement',
         data() {
@@ -58,6 +50,10 @@ export default {
 </script>
 
 <style>
+.inputComp {
+  width: 380px;
+
+}
 
  .dropdown {
   font-size: 14px;
@@ -68,20 +64,25 @@ export default {
 }
  
 .btn {
-  font-size: 10px;
+  margin-top:10px;
+  font-size: 14px;
   border-radius: 16px;
-  padding: 2px;
+  padding: 0px;
   float: right;
 }
+ .btnAdd {
+   float: left;
+  
+ }
  .quantity {
-   width: 25%;
-   margin: 0px 14px 10px 0px;
+   width: 14%;
+   margin: 0px 9px 10px 0px;
    
  }
 
 input{
-  font-size: 12px;
-  width: 45%;
+  font-size: 14px;
+  width: 40%;
   border-radius: 16px;
   margin-left: 5px 15px 5px 5px;
   padding: 2px;

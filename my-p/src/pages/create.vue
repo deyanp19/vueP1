@@ -1,12 +1,16 @@
 <template>
      <div class="create">
          <div class="product">
-            <placement placeholder1="Enter Product" placeholder2="Quantity" />
-            
+             <div class="addProduct">
+                <placement placeholder1="Enter Product" placeholder2="Quantity" />
+             </div>
         </div>
         <div class="list-products">
-           Entered Products and Quantities
-           <oneList />
+           Entered Products and Quantities  
+                <oneList />
+        </div>
+        <div class="createRecipe" >
+            <recipePicker />
         </div>
     </div>
 </template>
@@ -14,13 +18,13 @@
 <script>
 import placement from '../components/placement.vue'
 import oneList from '../components/forList.vue'
-
+import recipePicker from '../components/recipePicker.vue'
 export default {
     components: {
+        placement,
         oneList,
-        placement
+        recipePicker
     },
-     
     data() {
         return {
             // Enter if needed
@@ -30,26 +34,36 @@ export default {
 </script>
 
 <style>
- .product{
-    margin: 60px 0px 0px 0px;
-    padding: 20px;
-    width: 50%;
-    float: left;
-    background-color: rgba(219, 224, 149, 0.376);
-    border-radius: 10px;
-    
-}
+
 .list-products {
+    position:static;
+   float: left;
     padding-top: 15px;
     width: 40%;
-    margin: 40px 0px 0px 0px;
-    float: right;
+    margin: 250px 0px 0px 0px;
+    background-color: rgba(219, 224, 149, 0.376);
+    border-radius: 10px;
+}
+.createRecipe {
+    float:left;
+    padding-top: 15px;
+    width: 20%;
+    margin: 0px 0px 0px 0px;
+    background-color: rgba(219, 224, 149, 0.376);
+    border-radius: 10px;
+}
+ .product{
+    margin: 40px 0px 50px 0px;
+    padding: 20px;
+    width: 100%;
+    float: left;
     background-color: rgba(219, 224, 149, 0.376);
     border-radius: 10px;
 }
 
+
 li {
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 700;
   list-style-position: inside;
   list-style-type: circle;
@@ -58,8 +72,7 @@ li {
   background-color: #A9DFBF;
   border-radius: 16px;
   padding: 5px;
-  color: white;
-  text-shadow: 1px 1px 6px black  ;
+  color: rgb(10, 7, 7);
   box-shadow: 5px 5px 3px grey; 
   border-radius: 6px;
 }

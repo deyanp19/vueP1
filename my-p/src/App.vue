@@ -1,18 +1,13 @@
 <template>
   <div id="app">
-  <h1>Products to prepare dishes</h1>
-  
-
-  
-        
-
-  
- 
  <router-link to="/create" class="nav">Enter Products</router-link>
  <router-link to="/view" class="nav">View Products</router-link>
+  <h2>Products to Prepare Recipe </h2>
  <router-view></router-view>
-  
-    
+
+    <footer>
+     <p> The page is created in 2019</p>
+    </footer>
   </div>
 </template>
 
@@ -22,12 +17,31 @@
 
 export default {
   name: 'App'
-      
-  
 }
 </script>
 
 <style>
+footer {
+    
+    background-color: #666666;
+    clear: both;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    height: 66px;
+    border-top: 8px solid #4aaaa5;
+    overflow: hidden;
+    
+}
+footer>p {
+    color: rgb(245, 240, 240);
+    font-weight: normal;
+    margin-top: 16px;
+    bottom: 0px;
+    background-color: #666666;
+    font-size: 90%;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -35,28 +49,21 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top:60px;
-   
-  
+  width: 960px;
+  margin: auto;
 }
 h3 {
   margin: 40px 0 0;
 }
- ul{
-   position: right;
-   
- }
-
 .delete {
   border-radius: 50%;
   text-align: right;
   margin-right: 20px;
-  box-shadow: 0px 0px 7px grey;
-}
-
  
+}
 .nav {
+  margin-top: 50px;
   font-weight: 800;
-  /* margin-left:10px; */
   color: green;
   text-decoration: none;
   padding:10px;
@@ -66,20 +73,26 @@ h3 {
   background-color:  #A9DFBB;
   color: white;
 }
-
-li {
-  font-size: 10px;
-  font-weight: 700;
-  list-style-position: inside;
-  list-style-type: circle;
-  margin: 7px;
-  text-align: left;
-  background-color: #A9DFBF;
-  border-radius: 16px;
-  padding: 5px;
-  color: white;
-  text-shadow: 1px 1px 6px black  ;
-  box-shadow: 5px 5px 3px grey; 
-  border-radius: 6px;
+ /* width */
+::-webkit-scrollbar {
+  width: 5px;
 }
+ 
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(223, 205, 205); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #888585; 
+}
+ 
 </style>

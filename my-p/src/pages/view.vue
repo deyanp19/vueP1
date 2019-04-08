@@ -1,7 +1,7 @@
 <template>
 <div class="rview">
  
-   <oneList />
+ <oneList />
        
 </div>
 </template>
@@ -16,16 +16,14 @@ import oneList from '../components/forList.vue'
 export default {
   name: 'rview',
     components: {
-        oneList
+      oneList
     }
-  
- 
 }
 
 </script>
 
 <style>
-
-.view {
- max-width: 960px;
+.rview {
+  margin: auto;
 }
+ </style>

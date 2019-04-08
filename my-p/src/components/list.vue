@@ -12,7 +12,6 @@
 
       <div :key="item.id"  v-for="(item, index) in $store.getters.flavor" class="listOfItems"  >
           <span >
-        
             <span>{{ item }} </span>
           </span>
       <button  class="delete"   @click="delItem(index)">delete</button> 
