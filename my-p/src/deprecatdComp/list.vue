@@ -94,7 +94,6 @@ hr {
   font-weight: 700;
   list-style-position: inside;
   list-style-type: circle;
-  margin: 7px;
   text-align: left;
   background-color: #A9DFBF;
   border-radius: 16px;

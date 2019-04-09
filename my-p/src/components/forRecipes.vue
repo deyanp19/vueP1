@@ -1,10 +1,10 @@
 <template>
-<div class="forList">
-   <ul v-bind:key="item.id" v-for="(item, index) in $store.getters.getItems">
-
-            <li @click="moveItem(item)">{{item.product}}   units:  {{item.weight}} {{item.units}}
+<div class="forLoopRecipes">
+   <ul v-bind:key="item.id" v-for="(item, index) in $store.getters.getRecipes">
+        
+            <li >  {{item.products}}  
+                
                  <img class="btn delete"   @click="delItem(index)" width="15" src="https://img.icons8.com/color/48/000000/cancel.png"> 
-                 
             </li>
       </ul>
 </div>
@@ -12,31 +12,19 @@
 
 <script>
 export default {
-      name: 'oneList',
+      name: 'forLoopRecipes',
       components: {
-
       },
       methods: {
         delItem: function(index) {		 
-        this.$store.getters.getItems.splice(index, 1);
-                },
-        moveItem: function(products) {
-            // filter the incoming object only for the product key:value part using var=transit
-        var transit = products.product;
-        this.$store.commit('moveProducts',transit)
-        //console.log();
-        }
+        this.$store.getters.getRecipes.splice(index, 1);
+                }
         }
 }
 
 </script>
 <style>
-.forList{
-    overflow-y: auto;
-    height: 13em;
-    width: 23em;
-    line-height: 1em;
-}
+ 
 .delete {
     margin: 2px 0px;
 }

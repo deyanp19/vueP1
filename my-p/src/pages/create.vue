@@ -7,23 +7,35 @@
         </div>
         <div class="list-products">
            Entered Products and Quantities  
+                <search placeholder="Search"/>
                 <oneList />
         </div>
         <div class="createRecipe" >
-            <recipePicker />
+            <recipeMaker />
+             
         </div>
+        <div id="titlesOfRecipes">
+             <recipeSaved />
+         </div>
+         
     </div>
 </template>
 
 <script>
 import placement from '../components/placement.vue'
 import oneList from '../components/forList.vue'
-import recipePicker from '../components/recipePicker.vue'
+import recipeMaker from '../components/recipeMaker.vue'
+import search from '../components/search.vue'
+//import recipeSaved from '../components/recipeSaved.vue'
+ 
+
 export default {
     components: {
         placement,
         oneList,
-        recipePicker
+        recipeMaker,
+        search,
+        //recipeSaved
     },
     data() {
         return {
@@ -36,45 +48,50 @@ export default {
 <style>
 
 .list-products {
-    position:static;
-   float: left;
+    position:relative;
+    float: left;
     padding-top: 15px;
-    width: 40%;
-    margin: 250px 0px 0px 0px;
+    width: 41%;
+    margin: 50px 0px 0px 0px;
     background-color: rgba(219, 224, 149, 0.376);
     border-radius: 10px;
 }
 .createRecipe {
     float:left;
     padding-top: 15px;
-    width: 20%;
-    margin: 0px 0px 0px 0px;
+    margin: 50px 0px 0px 20px;
     background-color: rgba(219, 224, 149, 0.376);
     border-radius: 10px;
+    width: 25%;
+    overflow-y: auto;
+    height: 17.5em;
+    line-height: 1em;
 }
- .product{
+ 
+.forLoopRecipes {
+    height: 80%;
+}
+ .addProduct{
     margin: 40px 0px 50px 0px;
-    padding: 20px;
+    padding: 30px;
     width: 100%;
-    float: left;
+     
     background-color: rgba(219, 224, 149, 0.376);
     border-radius: 10px;
 }
-
-
 li {
-  font-size: 14px;
-  font-weight: 700;
-  list-style-position: inside;
-  list-style-type: circle;
-  margin: 7px;
-  text-align: left;
-  background-color: #A9DFBF;
-  border-radius: 16px;
-  padding: 5px;
-  color: rgb(10, 7, 7);
-  box-shadow: 5px 5px 3px grey; 
-  border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    list-style-position: inside;
+    list-style-type: circle;
+    margin: -10px 2px;
+    text-align: left;
+    background-color: #A9DFBF;
+    border-radius: 16px;
+    padding: 5px;
+    color: rgb(10, 7, 7);
+    box-shadow: 5px 5px 3px grey; 
+    border-radius: 6px;
 }
 
 </style>

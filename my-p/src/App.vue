@@ -2,12 +2,10 @@
   <div id="app">
  <router-link to="/create" class="nav">Enter Products</router-link>
  <router-link to="/view" class="nav">View Products</router-link>
-  <h2>Products to Prepare Recipe </h2>
+  <h2>Prepare Recipe </h2>
  <router-view></router-view>
 
-    <footer>
-     <p> The page is created in 2019</p>
-    </footer>
+   
   </div>
 </template>
 
@@ -21,27 +19,7 @@ export default {
 </script>
 
 <style>
-footer {
-    
-    background-color: #666666;
-    clear: both;
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-    text-align: center;
-    height: 66px;
-    border-top: 8px solid #4aaaa5;
-    overflow: hidden;
-    
-}
-footer>p {
-    color: rgb(245, 240, 240);
-    font-weight: normal;
-    margin-top: 16px;
-    bottom: 0px;
-    background-color: #666666;
-    font-size: 90%;
-}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -51,16 +29,12 @@ footer>p {
   margin-top:60px;
   width: 960px;
   margin: auto;
+  bottom: 50px;
 }
 h3 {
   margin: 40px 0 0;
 }
-.delete {
-  border-radius: 50%;
-  text-align: right;
-  margin-right: 20px;
  
-}
 .nav {
   margin-top: 50px;
   font-weight: 800;

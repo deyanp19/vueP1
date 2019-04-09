@@ -1,4 +1,4 @@
-<template>
+ <template>
 <div class="inputComp">
     <input  ref="my_input1" v-bind:placeholder="placeholder1" type="text" v-model="product"   style="text" />
     <input  class="quantity" ref="my_input2" v-bind:placeholder="placeholder2" type="text" v-model="weight"   style="text" /> 
@@ -33,7 +33,6 @@ export default {
               var weight = this.weight
               var units = this.units
               this.$store.commit('changeItem',{product,weight,units});
-               
               this.product="";
               this.weight="";
               this.units="";
@@ -67,11 +66,12 @@ export default {
   margin-top:10px;
   font-size: 14px;
   border-radius: 16px;
-  padding: 0px;
+  padding: 1px 8px;
   float: right;
 }
  .btnAdd {
    float: left;
+   margin: 0px 10px; 
   
  }
  .quantity {
@@ -89,8 +89,5 @@ input{
   float: left;
    
 }
-li {
-  height: 20px;
-  font:
-}
+ 
 </style>
