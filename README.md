@@ -9,7 +9,7 @@ _2._ Page B contains List B, where each item contains properties that user can c
 
 _3._ Please commit the project into git.
 
-<img src="../images/changed-to-singlepage-app.PNG" width="450">
+<img src="https://github.com/deyanp19/vueP1/blob/dev/images/changed-to-singlepage-app.PNG" width="350">
 
 ---
 
