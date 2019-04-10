@@ -1,19 +1,23 @@
-### VueProject 
- 
-*A.* Please check and  install  nodejs + vuejs + webpack.
+### VueProject
+
+_A._ Please check and install nodejs + vuejs + webpack.
 Make demo vue project that shows:
 
-*1.* Page A contains List A. User can add, remove, reorder and search items from the list.
+_1._ Page A contains List A. User can add, remove, reorder and search items from the list.
 
-*2.* Page B contains List B, where each item contains properties that user can choose from listA (like receipt)
+_2._ Page B contains List B, where each item contains properties that user can choose from listA (like receipt)
 
-*3.* Please commit the project into git.
-<img src="images/front_page.png" width="200">
-<img src="images/second_page.png" width="200">
-<img src="images/second_page3.png" width="200">
+_3._ Please commit the project into git.
+
+<img src="images/changed-to-single-page-app.png" width="450">
+
+---
+
+[Read more about the subjects covered in this project in the project Notes file](https://github.com/deyanp19/vueP1/blob/master/my-p/src/assets/tasks)
 
 #### Technologies required:
-* Bootstrap 
-* HTML, CSS, JavaScript
-* Vue
-* Nodejs + webpack
+
+- Bootstrap
+- HTML, CSS, JavaScript
+- Vue
+- Nodejs + webpack
