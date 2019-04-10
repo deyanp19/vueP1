@@ -13,7 +13,7 @@ _3._ Please commit the project into git.
 
 ---
 
-[Read more about the subjects covered in this project in the project Notes file](https://github.com/deyanp19/vueP1/blob/master/my-p/src/assets/tasks)
+[Read more about the subjects covered in this project in the project Notes file](https://github.com/deyanp19/vueP1/blob/dev/my-p/src/assets/tasks.md)
 
 #### Technologies required:
 
