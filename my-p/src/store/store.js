@@ -12,8 +12,8 @@ export const store = new Vuex.Store({
       {product:"Cofe",weight:" 100",units:"kg"},
       {product:"Honey",weight:" 3",units:"kg"},
       {product:"Cofe",weight:" 100",units:"kg"}],
-    savedRecipes:[{title:"Walnuts and honey", products:["honey","walnuts"]},{title:"Walnuts and honey", products:["honey","walnuts"]}]
-
+    savedRecipes:[
+      {title:"Walnuts and honey", products:["honey","walnuts"]},{title:"Walnuts and honey", products:["honey","walnuts"]}]
   },
   mutations: {
     change(state, flavor) {
@@ -32,7 +32,7 @@ export const store = new Vuex.Store({
       Recipe: state => state.Recipe,
       getItems: function(state) {
       var productAndWeight = state.items 
-      return productAndWeight
+      return productAndWeight 
       },
       getRecipes: function(state) {
         var recipeCreateDisplay = state.savedRecipes

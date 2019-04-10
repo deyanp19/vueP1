@@ -65,12 +65,7 @@ h3 {
    folat: right;
  }
 
-  .delete {
-  border-radius: 16px;
-  margin-left: 5px 15px 5px 5px;
-  padding: 2px;
  
-}
  
 hr { 
   display: block;
