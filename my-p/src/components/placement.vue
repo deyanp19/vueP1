@@ -9,7 +9,7 @@
           <option>l</option>
           <option>ml</option>
         </select>
-        <button  class="btnAdd" @click="changeItem">Add Item</button> 
+        <button  class="btnAdd" @click="addProduct">Add Item</button> 
     </div>
 </div>
 </template>
@@ -19,28 +19,28 @@ export default {
         name:'placement',
         data() {
           return {
-            weight:"",
-            procuct:"",
-            units: this.value
+            weight:""
+            
           }
         },
         //units:["kg","gr","l","ml"],
         props: ['placeholder1','placeholder2'],
         methods: {
-          changeItem: function() {    
+          addProduct: function() {    
             if ((this.product && this.weight) === "") {
               alert("Please dont leave it blanck")
             } else {
-              var product = this.product
+              var title = this.product
               var weight = this.weight
               var units = this.units
-              this.$store.commit('changeItem',{product,weight,units});
+              this.$store.commit('addProduct',{title,weight,units});
               this.product="";
               this.weight="";
               this.units="";
-              this.$refs.my_input1.focus();  
+               
               this.$refs.my_input2.focus();  
-              this.$refs.my_input3.focus();  
+              this.$refs.my_input3.focus();
+              this.$refs.my_input1.focus();   
             return ; 
           }
         }  

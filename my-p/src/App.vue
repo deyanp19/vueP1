@@ -75,7 +75,7 @@ h3 {
 }
  
 .nav {
-  margin: 50px 0px;
+  margin: 0px 0px;
   font-weight: 800;
   color: green;
   text-decoration: none;

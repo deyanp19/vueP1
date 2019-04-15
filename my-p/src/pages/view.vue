@@ -1,6 +1,6 @@
 <template>
 <div class="rview">
- 
+ <p>ksdl {{ productName}}</p>
  <forList />
        
 </div>

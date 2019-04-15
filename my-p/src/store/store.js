@@ -5,43 +5,69 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
   state: {
-    
-    items:[{product:"Honey",weight:" 3",units:"kg"},
-      {product:"Cofe Robust",weight:" 200",units:"kg"},
-      {product:"Honey",weight:" 3",units:"kg"},
-      {product:"Cofe",weight:" 100",units:"kg"},
-      {product:"Honey",weight:" 3",units:"kg"},
-      {product:"Cofe",weight:" 100",units:"kg"}],
-    savedRecipes:[
-      {title:"Walnuts and honey", products:["honey","walnuts"]},{title:"Walnuts and honey", products:["honey","walnuts"]}]
+    products:{
+      chese:{title:"Chese bg",weight:" 3",units:"kg"},
+      honey:{title:"Honey Herbal",weight:" 3",units:"kg"}
+    },
+    recipes:{
+            tarator:{products:["chese","honey"]},  
+            musaka:{products:["code","code"]}
+          },
+    recipeSaver: ["chese","dought","marinara sauce"],
+    stateOfButtons: {
+      homePageSlogan:true,
+      btnAddProduct:false,
+      btnCreateRecipe:false
+    }
   },
   mutations: {
-    change(state, flavor) {
-      state.flavor.push(flavor)
-       },
-    changeItem(state,{product,weight,units}) {
+    addProduct(state,{title,weight,units}) {
+      // create function that will change the name of the property after the state.products 
+      var trimTitle = title.trim().replace(/ /g,'');
       // create  variables that need to be pushed each itteration
-    state.items.push({product,weight,units})
+     Vue.set(state.products, trimTitle, {title,weight,units})
     },
-    moveProducts(state,products) {
-      state.savedRecipes.push({products})
+    delProduct(state,index) {
+       delete state.products[index]; 
+    },
+    moveProducts(state,product) {
+      // gets the value of the clicked element's by pointing at the object products value  and pushes it to an array recipeSaver.
+      // 2.The goal is to stage this array for push to the list of recipes(recupeMaker.vue)
+      state.recipeSaver.push(product.title);
+      console.log(product)
+    },
+    delRecipes(state, index) {
+      delete state.recipes[index];
+    },
+    // buttonSwitch(state) {
+    //   // if you neeed to use the state as a way to change the showing of the third display
+    // },
+      saveRecipe(state,{recipeTitle, recipeSaver}) {
+      // create function that will change the name of the property after the state.products 
+      
+      //Vue.set(state.recipes,recipeTitle, { recipeSaver})
+
+      // create  variables that need to be pushed each itteration
+
+     Vue.set(state.recipes, recipeTitle, { recipeSaver})
     }
+
   },
   getters: {
-      flavor: state => state.flavor,
-      Recipe: state => state.Recipe,
-      getItems: function(state) {
-      var productAndWeight = state.items 
-      return productAndWeight 
+      
+      getProducts: function(state) {
+      var productsDisplay = state.products 
+      return productsDisplay;
       },
       getRecipes: function(state) {
-        var recipeCreateDisplay = state.savedRecipes
-        return recipeCreateDisplay; 
+        var recipeDisplay = state.recipes
+        return recipeDisplay; 
+      },
+      getRecipeSaver: function(state) {
+        var recipeSaver = state.recipeSaver; 
+      return recipeSaver;
       }
     }
-   
-  
-      // create getter for Recipe title only
-
 })
+
 

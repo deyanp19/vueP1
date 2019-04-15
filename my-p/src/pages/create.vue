@@ -1,26 +1,43 @@
 <template>
   <div class="create">
+   
     <div class="createRecipe">
-      <h4 class="title">Recipe Maker</h4>
+      <h4 class="title">List of Recipes</h4>
       <div class="createRecipe-display">
         <recipeMaker/>
       </div>
       <button class="btnAdd">Add</button>
     </div>
     <div class="list-products">
-      <h4 class="title">Entered Products and Quantities</h4>
+      <h4 class="title">Products </h4>
       <div class="list-products-display">
         <forList/>
       </div>
-      <button class="btnAdd">Add</button>
+      <button @click="addProd"    class="btnAdd">Add</button>
     </div>
 
     <div class="product">
-      <div class="addProduct">
+     <div v-show="false" class="addProduct"> 
+            <p>You can click on the Add button in the next section Products to add new type of procusts</p>
+            <p>If you need to add a new recipe press the Add button at the seciton List of recipes and click on the products to add  </p>
+         </div>
+      <div  v-show="true" class="addProduct">
         <br>
-        <h4 class="title">Add Products</h4>
+        <h4  class="title">Add Products</h4>
         <placement placeholder1="Enter Product" placeholder2="Quantity"/>
       </div>
+
+      <div  v-show="true"  class="addRecipeProducts addProduct">
+        <br />
+         <h4 class="title">Add Products</h4>
+           <input  ref="my_input4" placeholder="Title of Recipe" type="text" v-model="titleOfRecipeInput" class="titleOfRecipe"  style="text" />
+     
+          <recipeSaver  placeholder4="Title"/>
+        <button class="btnAdd" @click="saveRecipe" >Save</button>
+      </div>
+
+        
+
     </div>
   </div>
 </template>
@@ -29,30 +46,62 @@
 import forList from "../components/forList.vue";
 import recipeMaker from "../components/recipeMaker.vue";
 import placement from "../components/placement.vue";
-//import search from '../components/search.vue'
-//import recipeSaved from '../components/recipeSaved.vue'
+import recipeSaver from "../components/recipeSaver.vue";
 
 export default {
   components: {
     placement,
     forList,
-    recipeMaker
-
-    //recipeSaved
+    recipeMaker,
+    recipeSaver
   },
   data() {
     return {
       // Enter if needed
+      titleOfRecipeInput:""
     };
+  },
+
+  props:{},
+  methods: {      saveRecipe: function() {    
+    //saveRecipe(state,{recipeTitle,recipeSaver})  
+         var recipeTitle = this.titleOfRecipeInput;
+         
+          this.$store.commit('saveRecipe',{recipeTitle});
+          this.titleOfRecipeInput="";
+          this.$refs.my_input4.focus();  
+          
+        return ; 
+    
+    }  ,
+    greetingView: function() {
+      if (addRecipe&&addProd===false) {
+        return false;
+      }  
+    },
+    addRecipe:function() {
+      return false;
+    },
+    addProd: function() {
+      return false;
+    },
+
   }
 };
 </script>
 
 <style>
+ 
+.titleOfRecipe {
+  float: left;
+  clear: both;
+  margin: -35px 0px -4px 70px;
+}
 .list-products-display {
+  
   height: 230px;
   overflow-y: auto;
-  margin: 50px 25px 0px 25px;
+  margin: 50px 20px 0px 20px;
   background-color: rgb(72, 187, 170);
   border-radius: 10px;
 }
@@ -75,6 +124,7 @@ export default {
   border-radius: 10px;
   height: 230px;
   overflow-y: auto;
+  
 }
 .createRecipe {
   box-sizing: border-box;
@@ -85,6 +135,7 @@ export default {
   border-radius: 10px;
   width: 35%;
   height: 350px;
+  margin-bottom: 70px; 
 }
 
 .addProduct {
@@ -96,6 +147,7 @@ export default {
   float: left;
   background-color: rgba(219, 224, 149, 0.376);
   border-radius: 10px;
+   margin-bottom: 70px; 
 }
 .inputComp {
   margin: 50px 10px;

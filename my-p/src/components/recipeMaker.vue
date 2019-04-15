@@ -4,11 +4,11 @@
 <!-- USE AN ARRAY METHOD TO CHOOSE FROM THE LIST ON LEFT AND MOVE IT TO DIFFERENT ARRAY SO YOU CAN DISPLAY IT IN A SECOND ARRAY INSIDE AND OBJECT AND ADD A TITLE TO THE RECIPE  THEN JUST CALL IT . 
     FOR THE FUNCTIONALITY TO EDIT THE RECEPIES YOU HAVE TO LOAD THEM SOMEWHERE AND DELETE OR ADD STUFF AND SAVE THEM AGAIN -->
 
-   <ul v-bind:key="item.id" v-for="(item, index) in $store.getters.getRecipes">
+   <ul v-bind:key="value.id" v-for="(value, index) in $store.getters.getRecipes">
         
-            <li >  {{item.products}}  
+            <li  >  {{index}}  
                
-                 <img class="btn delete"   @click="delItem(index)" width="19" src="https://img.icons8.com/color/48/000000/cancel.png">
+                 <img class="btn delete"   @click="delRecipe(index)" width="19" src="https://img.icons8.com/color/48/000000/cancel.png">
                 
             </li>
       </ul>
@@ -16,15 +16,16 @@
 </template>
 
 <script>
-import forLoopRecipes from './forRecipes.vue'
+ 
 export default {
     name:'recipeMaker',
     components: {
-        forLoopRecipes
+        
     },
     methods: {
-      delItem: function(index) {		 
-        this.$store.getters.getRecipes.splice(index, 1);
+      delRecipe: function(index) {		 
+        this.$store.commit('delRecipes', index);
+        console.log('After deleting execution in del Recipe '+ index)
                 }
             }
     
