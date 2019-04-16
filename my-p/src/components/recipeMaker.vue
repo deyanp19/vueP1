@@ -4,7 +4,7 @@
 <!-- USE AN ARRAY METHOD TO CHOOSE FROM THE LIST ON LEFT AND MOVE IT TO DIFFERENT ARRAY SO YOU CAN DISPLAY IT IN A SECOND ARRAY INSIDE AND OBJECT AND ADD A TITLE TO THE RECIPE  THEN JUST CALL IT . 
     FOR THE FUNCTIONALITY TO EDIT THE RECEPIES YOU HAVE TO LOAD THEM SOMEWHERE AND DELETE OR ADD STUFF AND SAVE THEM AGAIN -->
 
-   <ul v-bind:key="value.id" v-for="(value, index) in $store.getters.getRecipes">
+   <ul v-bind:key="value.id" v-for="(value, index) in getRecipes" >
         
             <li  >  {{index}}  
                
@@ -16,7 +16,7 @@
 </template>
 
 <script>
- 
+ import { mapGetters } from 'vuex'
 export default {
     name:'recipeMaker',
     components: {
@@ -27,9 +27,15 @@ export default {
         this.$store.commit('delRecipes', index);
         console.log('After deleting execution in del Recipe '+ index)
                 }
-            }
+    },
+    computed: {
+        // displayListOfRecipes() {
+        //     return this.$store.getters.getRecipes;
+        ...mapGetters(['getRecipes'])
+        }
+    }
     
-}
+ 
 
 </script>
 

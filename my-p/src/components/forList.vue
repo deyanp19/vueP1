@@ -2,14 +2,24 @@
 <div class="forList">
   <!-- <input  class="search_input" ref="prod_search" v-model="search" v-bind:placeholder="placeholder3" /> -->
 <div>
-    
-   <ul v-bind:key="value.id" v-for="(value, index) in $store.getters.getProducts" >
-
-            <li @click="moveProduct(value)" v-bind="value.id" >{{value.title}} {{value.weight}} {{value.units}}
-                 <img class="btn delete"   @click="delProduct(index)" width="19" src="https://img.icons8.com/color/48/000000/cancel.png"> 
-            </li>
+    <!-- {{listProduct}} -->
+   <ul    v-bind="value.id" 
+            v-for="(value, index) in listProduct" 
+            @click="moveProduct(value)"  
+            :key="value.id" >
+        <li 
+            
+        >
+            {{value.title}} {{value.weight}} {{value.units}}
+                <img 
+                class="btn delete" 
+                @click.stop="delProduct(index )"
+                width="19"
+                src="https://img.icons8.com/color/48/000000/cancel.png"
+            /> 
+        </li>
       </ul> 
-      
+       
 </div>  
 </div>
 </template>
@@ -26,24 +36,32 @@ export default {
         },
             props:['placeholder3'],
         methods: {
-        delProduct: function(index) {	
+        delProduct: function( index) {	
+            // event.stopPropagation();
+        console.log('after delete '+event)
             // status : not working
         console.log('before delete ' + index)
         //delete this.$store.mutations.delProduct[index]; 
         this.$store.commit('delProduct',index);
-        console.log('after delete '+index)
+       
+        
+        
                 },
         moveProduct: function(value) {
             
         this.$store.commit('moveProducts',value)
         
         console.log(product);
+         
+        
             },
         // create function that returns only the name of the property name from the  object and place it in the brackets
         
         },
         computed: { 
-
+             listProduct() {
+                 return this.$store.getters.getProducts
+                 }
         }
     }
 

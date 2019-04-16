@@ -1,43 +1,43 @@
 <template>
   <div class="create">
-   
+   <!-- Below is the   Add button for recipe maker -->
     <div class="createRecipe">
       <h4 class="title">List of Recipes</h4>
       <div class="createRecipe-display">
         <recipeMaker/>
       </div>
-      <button class="btnAdd">Add</button>
+       
+      <button @click="addRecipe" class="btnAdd">Add</button>
     </div>
+    <!-- Below is the buttonf for products -->
     <div class="list-products">
       <h4 class="title">Products </h4>
       <div class="list-products-display">
         <forList/>
       </div>
+      
       <button @click="addProd"    class="btnAdd">Add</button>
     </div>
 
-    <div class="product">
-     <div v-show="false" class="addProduct"> 
+  <!--  <div v-show="instructions"  class="product">
+      <div    class="addProduct"> 
             <p>You can click on the Add button in the next section Products to add new type of procusts</p>
             <p>If you need to add a new recipe press the Add button at the seciton List of recipes and click on the products to add  </p>
-         </div>
-      <div  v-show="true" class="addProduct">
+         </div> -->
+      <div  v-show="addRecipeView"   class="addProduct">
         <br>
         <h4  class="title">Add Products</h4>
+         
         <placement placeholder1="Enter Product" placeholder2="Quantity"/>
       </div>
-
-      <div  v-show="true"  class="addRecipeProducts addProduct">
+<!-- Below is the component with save recipe -->
+      <div  v-show="addProdView" class="addRecipeProducts addProduct">
         <br />
          <h4 class="title">Add Products</h4>
            <input  ref="my_input4" placeholder="Title of Recipe" type="text" v-model="titleOfRecipeInput" class="titleOfRecipe"  style="text" />
-     
           <recipeSaver  placeholder4="Title"/>
         <button class="btnAdd" @click="saveRecipe" >Save</button>
       </div>
-
-        
-
     </div>
   </div>
 </template>
@@ -58,36 +58,47 @@ export default {
   data() {
     return {
       // Enter if needed
-      titleOfRecipeInput:""
-    };
+      titleOfRecipeInput:"",
+      addProdView:true,
+      addRecipeView:false,
+     // instructions:true
+    }
   },
 
   props:{},
-  methods: {      saveRecipe: function() {    
+  methods: {   
+       saveRecipe: function() {    
     //saveRecipe(state,{recipeTitle,recipeSaver})  
          var recipeTitle = this.titleOfRecipeInput;
          
           this.$store.commit('saveRecipe',{recipeTitle});
           this.titleOfRecipeInput="";
           this.$refs.my_input4.focus();  
-          
         return ; 
-    
-    }  ,
+    },
     greetingView: function() {
-      if (addRecipe&&addProd===false) {
         return false;
-      }  
     },
-    addRecipe:function() {
-      return false;
+     addRecipe: function() {
+      console.log('add Recipe is pressed')
+      console.log(this.addRecipeView)
+      this.addRecipeView = !this.addRecipeView
+      this.addProdView = !this.addProdView
+      //this. instructions=false
+      console.log(this.addRecipeView)
+      return  this.addRecipeView;
     },
-    addProd: function() {
-      return false;
-    },
-
+    addProd:function() {
+      console.log('add Product is pressed')
+      console.log(this.addProdView)
+      this.addProdView = !this.addProdView
+      this.addRecipeView = !this.addRecipeView
+       //this. instructions=false
+      console.log(this.addProdView)
+      return  this.addProdView;
+    }
   }
-};
+}
 </script>
 
 <style>

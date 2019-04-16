@@ -19,7 +19,9 @@ export default {
         name:'placement',
         data() {
           return {
-            weight:""
+            weight:"",
+            product:"",
+            units:""
             
           }
         },
