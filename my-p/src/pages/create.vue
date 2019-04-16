@@ -38,8 +38,13 @@
           <recipeSaver  placeholder4="Title"/>
         <button class="btnAdd" @click="saveRecipe" >Save</button>
       </div>
+      <div class="recipeDisplay">
+          <br />
+         <h4 class="title">Ingredients</h4>
+        <recipeDisplay />
+      </div>
     </div>
-  </div>
+  
 </template>
 
 <script>
@@ -47,13 +52,15 @@ import forList from "../components/forList.vue";
 import recipeMaker from "../components/recipeMaker.vue";
 import placement from "../components/placement.vue";
 import recipeSaver from "../components/recipeSaver.vue";
+import recipeDisplay from "../components/recipeDisplay.vue"
 
 export default {
   components: {
     placement,
     forList,
     recipeMaker,
-    recipeSaver
+    recipeSaver,
+    recipeDisplay
   },
   data() {
     return {
@@ -102,7 +109,18 @@ export default {
 </script>
 
 <style>
- 
+ .recipeDisplay {
+  box-sizing: border-box;
+  float: left;
+  padding-top: 15px;
+  margin: 0px 0px 0px 0px;
+  background-color: rgba(219, 224, 149, 0.376);
+  border-radius: 10px;
+  width: 100%;
+  /*height: 350px; */
+  margin-bottom: 70px; 
+}
+
 .titleOfRecipe {
   float: left;
   clear: both;
