@@ -2,6 +2,9 @@ import Vue from 'vue'
 import app from './App.vue'
 import VueRouter from 'vue-router'
 import router from './router'
+ 
+
+ 
 
 import {store} from './store/store'
 

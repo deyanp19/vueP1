@@ -1,5 +1,6 @@
 ### VueProject
 
+
 _A._ Please check and install **nodejs + vuejs + webpack**.
 Make demo vue project that shows:
 
@@ -11,6 +12,7 @@ _3._ Please commit the project into git.
 <img src="images/front_page_main.png" width="200">
 <img src="images/front_page_main_validation.png" width="200">
 <img src="images/second_page.png" width="200">
+ 
 
 ---
 

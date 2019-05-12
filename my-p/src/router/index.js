@@ -1,8 +1,7 @@
 //import Vue from 'vue'
 import VueRouter from 'vue-router'
-import list from '../components/list.vue'
-import recipe from '../components/secondPage.vue'
-import storedItems from '../components/insidecom.vue'
+import create from '../pages/create.vue'
+import view from '../pages/view.vue'
  
 
 
@@ -14,10 +13,8 @@ import storedItems from '../components/insidecom.vue'
 const router = new VueRouter({
   mode: 'history',
   routes: [
-    { path: '/', component: list },
-    { path: '/recipe', component: recipe },
-    { path: '/store', component: storedItems}
-    
+    { path: '/create', component: create },
+    { path: '/view', component: view }
   ]
 })
 

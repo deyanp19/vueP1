@@ -1,0 +1,63 @@
+### _**Here i have developed little task explanation on questions that arose at the process of developing this project**_
+
+Lets cover the topic of Events
+**Events ** happen when the users interact with the webpage and also machines interact with the code (by sending or receiving signals that are decoded in packages of data and for the browser we can say the http protocol)
+**catching events**
+**custom events**
+
+##### Type of events
+
+- Any of this events can be used to triger a function in the JavaScript code
+
+- UI events - load, unload, error, resize, scroll
+- keyboard events - keydosn keyup, keypress
+- mouse events -click, dblclick, mouseup, mousemove, ouseover, mouseout
+- focus events - focus, blur
+- form events -input, change, suvmit, reset, cut, copy, paste, select
+- mutation events - DOMSubtreeModified, DOMNodeInserted, DOMNodeRemoved, DOMNodeInsertedIntoDocument,DOMNodeRemovedFromDocument
+
+- **EVENT HANDLING** --
+
+  - Select node element you want the script to be respond to
+  - Indicate which event on the selected node will trigger the response
+  - Call the code
+
+- 3 - Ways to bind an event to element
+  - HTML event handlers -- bad practice (Example: <a onclick="hide()" -- calling funcitons inside html element)
+  - Traditional DOM event handlers -- element.onelement - funcitonName
+  - DOM level 2 event listeners -- this event listeners allow one event to trigger multiple funcitons--- element.addEventListener('state the event", functionName[,Boolean--usually fallse]). Here you wrap thefunciton call in an anonyumous funcion. That means you call the funcion you need to trigger inside anonymous function.--= funcitonName() {chekcUsername(83)}=--
+
+# event flow
+
+- HTML elements are nested inside other elements.
+
+  - For example if you try to click a link , you will hover over bunch of other parent to the link elements. Any one of them can trigger the link.
+    DOCUMENT --------------|
+    <html> ----------------|
+    <body> ------------|
+    <ul> ----------|
+    <li> ------|
+    <a> ---|
+
+  - the event listener's third parameter is by default _false_ and this is because the **bubling phase** is the choice.
+
+    - event bubbling - the event starts aththe _most specific <a>_ node and flows outword to the least specific one
+    - event capturing - the event starts at the least specific node and flows inwards to the most specific one ( document to <a>)
+    - lets mention 2 methods
+
+      - preventDefault() - cancel default behaviour of the event
+      - stopPropagation() - stops the event from ubbling or capturing anyu further
+
+    - event delegation -- you place event handler on a parent element and use event object's _target_ property to find which of its children the event happened
+
+#### Types of events
+
+###### DOM events
+
+###### HTML5 events
+
+###### BOM events
+
+### Pattern design and UML
+
+### Import and export and modules

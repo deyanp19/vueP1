@@ -1,46 +1,30 @@
 <template>
-<div class='recepie'>
+<div class='Recipe'>
 <h4>Lets have fun and answer the question:</h4>
+ 
 <p>Can you make ... with the listed products below</p>
-   
+   <!-- two v-for loops -possible -->
  <ol  >
      <li  v-for="item in dishes"   v-bind:key="item.id">{{item}} {{messageForListItems}}
-<!-- <span><li >{{$store.getters.getItems}} </li></span> -->
-
         <ul v-for="item in $store.getters.flavor"><li> {{item}}</li></ul>  
      </li>    
   </ol>
-  
- 
-   
- 
 </div>
- 
-
 </template>
 
-
 <script>
-// import list from './list'
-// import {mapGetters} from 'vuex'
-
+ 
 export default {
-    name: 'recepie',
+    name: 'Recipe',
     data() {
         return {
             messageForListItems: 'from this products:',
             dishes:['Pizza', 'Stew','Burger']
         }
     },
-    // computed: mapGetters(['getItems'])
-    // dataArray() {
-    //    return  $store.getters.items[0]
-    // }
 }
 </script>
 
-
 <style>
-
 
 </style>
